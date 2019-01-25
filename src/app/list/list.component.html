@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Front-end Coding Challenge</h1>
+  <br>
+  <div class="row" *ngFor="let item of res.items">
+    <div class="col" >
+      <div class="card">
+        <div class="card-body">
+          <div class="row" >
+            <div class="col-md-3">
+             <img src="{{ item.owner.avatar_url}}" alt="..." class="img-thumbnail">
+            </div>
+            <div class="col-md-9">
+              <h5 class="card-title"> {{ item.name}}</h5>
+              <p class="card-text">{{ item.description}}</p>
+              <div>
+                  <i class="fa fa-star" aria-hidden="true"></i> Stars :{{ item.stargazers_count}}
+              </div>
+              <div>
+                  <i class="fa fa-eye" aria-hidden="true"></i> Issues :{{ item.watchers_count}}
+              </div>
+              <br>Submitted {{ date_difent(item.created_at)| number:0 }} days ago by {{item.owner.login}}
+            </div>
+          </div>  
+        </div>
+      </div>
+      <br>
+    </div>
+    
+  </div>
+</div>
